@@ -22,6 +22,8 @@ createFish = (event) => {
 
     //passed in through app and inventory components
     this.props.addFish(fish);
+    //refresh form
+    event.currentTarget.reset();
 };
 
     render() {

@@ -12,7 +12,15 @@ class App extends React.Component {
     };
     //passing to inventory then to the form as prop
     addFish = fish => {
-        console.log("adding a fish")
+        //console.log("adding a fish")
+        //take copy of existing state
+        const fishes = {...this.state.fishes};
+        //add new fish to fishes variable
+        fishes[`fish${Date.now()}`] = fish;
+        //set new fishes object to state -pass it piece of state you want to update
+        this.setState({
+            fishes: fishes
+        });
     };
     render() {
         return (
