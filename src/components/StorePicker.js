@@ -16,7 +16,7 @@ class StorePicker extends React.Component {
         //get text from input
         console.log(this.myInput.current.value);
         const storeName = this.myInput.current.value;
-        //change page to /store/whatever-input
+        //change page to /store/whatever-input with react-router
         this.props.history.push(`/store/${storeName}`);
     }
 
