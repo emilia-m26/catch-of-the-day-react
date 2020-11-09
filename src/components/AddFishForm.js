@@ -18,7 +18,10 @@ createFish = (event) => {
         desc: this.descRef.current.value,
         image: this.imageRef.current.value,
     }
-    console.log(fish);
+    //console.log(fish);
+
+    //passed in through app and inventory components
+    this.props.addFish(fish);
 };
 
     render() {

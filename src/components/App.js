@@ -5,6 +5,15 @@ import Inventory from './Inventory';
 
 
 class App extends React.Component {
+    //initial state being set as property
+    state = {
+       fishes: {},
+       order: {}
+    };
+    //passing to inventory then to the form as prop
+    addFish = fish => {
+        console.log("adding a fish")
+    };
     render() {
         return (
             <div className="catch-of-the-day">
@@ -12,7 +21,7 @@ class App extends React.Component {
                     <Header tagline="Fresh Seafood Market" />
                 </div>
                 <Order />
-                <Inventory />    
+                <Inventory addFish={this.addFish} />    
             </div>
         );
     }
