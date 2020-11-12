@@ -34,8 +34,9 @@ class App extends React.Component {
         //take copy of state
         const order = {...this.state.order};
         //add to order or update number in order
-        order.fish1 = order.fish1 + 1 || 1;
+        order[key] = order[key] + 1 || 1;
         //setState to update state object
+        this.setState({order: order});
     }
 
     render() {
