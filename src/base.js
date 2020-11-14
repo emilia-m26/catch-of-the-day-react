@@ -8,3 +8,13 @@ const firebaseApp = firebase.initializeApp({
         authDomain: "catch-of-the-day-fresh-market.firebaseapp.com",
         databaseURL: "https://catch-of-the-day-fresh-market.firebaseio.com"        
 });
+
+
+//rebase bindings
+const base = Rebase.createClass(firebaseApp.database());
+
+//named export
+export { firebaseApp };
+
+//default export
+export default base;
