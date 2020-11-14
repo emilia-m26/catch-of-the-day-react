@@ -4,7 +4,8 @@ import Order from './Order';
 import Inventory from './Inventory';
 import sampleFishes from '../sample-fishes';
 import Fish from './Fish';
-import { object } from 'prop-types';
+//import { object } from 'prop-types';
+import base from '../base';
 
 
 class App extends React.Component {
@@ -13,6 +14,17 @@ class App extends React.Component {
        fishes: {},
        order: {}
     };
+
+    componentDidMount() {
+        //console.log('Mounted!');
+        const { params } = this.props.match;
+        //ref is for storename/fishes & syncing state with firebase
+        this.ref = base.syncState(`${params.storeId}/fishes`, {
+            context: this,
+            state: 'fishes'
+        });
+    }
+
     //passing to inventory then to the form as prop
     addFish = fish => {
         //console.log("adding a fish")
