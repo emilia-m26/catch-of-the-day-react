@@ -18,11 +18,21 @@ class App extends React.Component {
     componentDidMount() {
         //console.log('Mounted!');
         const { params } = this.props.match;
+        //first reinstate our localStorage
+        const localStorageRef = localStorage.getItem(params.storeId);
+        if(localStorage) {
+            //change back from string to object
+            this.setState({ order: JSON.parse(localStorageRef) })
+        }
         //ref is for storename/fishes & syncing state with firebase
         this.ref = base.syncState(`${params.storeId}/fishes`, {
             context: this,
             state: 'fishes'
         });
+    }
+
+    componentDidUpdate() {
+        localStorage.setItem(this.props.match.params.storeId, JSON.stringify(this.state.order));
     }
 
     //unmounts store so you aren't still listening for changes
