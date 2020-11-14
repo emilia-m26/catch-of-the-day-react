@@ -1,6 +1,6 @@
 import React from 'react';
 
-class EditFishForm extends from React.Component {
+class EditFishForm extends React.Component {
     render(){
         return <p>Edit Fish</p>
     }
