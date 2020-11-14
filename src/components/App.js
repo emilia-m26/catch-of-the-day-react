@@ -25,6 +25,11 @@ class App extends React.Component {
         });
     }
 
+    //unmounts store so you aren't still listening for changes
+    componentWillUnmount() {
+        base.removeBinding(this.ref);
+    }
+
     //passing to inventory then to the form as prop
     addFish = fish => {
         //console.log("adding a fish")
