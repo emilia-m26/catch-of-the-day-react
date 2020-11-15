@@ -78,6 +78,15 @@ const fishes = {
       "With 21-25 two bite prawns in each pound, these sweet morsels are perfect for shish-kabobs.",
     price: 2250,
     status: "available"
+  },
+
+  fish10: {
+    name: "Ahi Tuna",
+    image: "/images/ahi-tuna.jpg",
+    desc:
+      "Sushi grade yellowtail tuna perfect for Spicy Ahi Poke.",
+    price: 1895,
+    status: "available"
   }
 };
 
