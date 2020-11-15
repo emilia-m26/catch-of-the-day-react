@@ -20,7 +20,7 @@ class App extends React.Component {
         const { params } = this.props.match;
         //first reinstate our localStorage
         const localStorageRef = localStorage.getItem(params.storeId);
-        if(localStorage) {
+        if(localStorageRef) {
             //change back from string to object
             this.setState({ order: JSON.parse(localStorageRef) })
         }
