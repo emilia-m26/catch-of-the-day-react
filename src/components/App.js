@@ -83,7 +83,16 @@ class App extends React.Component {
         order[key] = order[key] + 1 || 1;
         //setState to update state object
         this.setState({order: order});
-    }
+    };
+
+    removeFromOrder = (key) => {
+    //take copy of state
+        const order = {...this.state.order};
+    //remove from order 
+        delete order[key];
+    //setState to update state object
+        this.setState({order: order});
+    };
 
     render() {
         return (
