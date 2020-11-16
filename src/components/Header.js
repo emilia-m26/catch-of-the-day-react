@@ -21,7 +21,7 @@ class Header extends React.Component {
     }
 }
 
-Header.PropTypes = {
+Header.propTypes = {
     tagline: PropTypes.string.isRequired
 }
 
