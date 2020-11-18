@@ -18,7 +18,16 @@ class Inventory extends React.Component {
     state = {
         uid: null,
         owner: null
-    }
+    };
+
+    ///every time page loaded, firebase will see if logged in, will pass user and then pass to authandler to do all checks needed.
+    componentDidMount() {
+        firebase.auth().onAuthStateChanged(user => {
+            if(user) {
+                this.authHandler({user});
+            }
+        })
+    };
 
     authHandler = async (authData) => {
         console.log(authData)
